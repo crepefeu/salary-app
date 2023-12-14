@@ -129,7 +129,7 @@ export class AppComponent implements OnInit{
   }
 
   annualIncomeToHourlyIncome(annualIncome: number) {
-    return Math.round(((annualIncome / (35 * 52)) + Number.EPSILON) * 100) / 10;
+    return Math.round(((annualIncome / (35 * 52)) + Number.EPSILON) * 100) / 100;
   }
 
   annualIncomeToMonthlyIncome(annualIncome: number) {
