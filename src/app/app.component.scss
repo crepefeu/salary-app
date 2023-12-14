@@ -1,0 +1,377 @@
+.content {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 100px;
+    gap: 30px;
+
+    &::before {
+        z-index: -1;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 0;
+        --line: #03a8f432;
+        content: "";
+        background: linear-gradient(90deg, var(--line) 2px, transparent 1px 10vmin)
+            0 -5vmin / 10vmin 10vmin,
+          linear-gradient(var(--line) 2px, transparent 1px 10vmin) 0 -5vmin / 10vmin
+            10vmin;
+        -webkit-mask: linear-gradient(-360deg, transparent 15%, white);
+        mask: linear-gradient(-360deg, transparent 15%, white);
+      }
+}
+
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+
+    h1 {
+        border-radius: 10px;
+        padding: 15px;
+        width: fit-content;
+        background-color: #03a8f46a;
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 0 5px #03a8f4;
+    }
+}
+
+.form-ctn {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    background-color: #03a8f435;
+    padding: 20px;
+    gap: 30px;
+    border-radius: 20px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    gap: 20px;
+
+    .salary-inputs-table{
+        width: 100%;
+
+        td, th {
+            text-align: left;
+            padding: 5px;
+        }
+    }
+
+    .grid {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+    }
+
+    .input-ctn {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(204, 204, 204);
+            outline: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #03a8f4c4;
+    }
+
+    .radio-input-ctn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        input {
+            width: 15px;
+            height: 15px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+            color: white;
+        }
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    gap: 20px;
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #03a8f4c4;
+    }
+
+    .radio-input-ctn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        input {
+            width: 15px;
+            height: 15px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    .salary-results-ctn {
+        display: flex;
+        gap: 15px;
+    }
+
+    .input-ctn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(204, 204, 204);
+            outline: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+
+            &:read-only {
+                cursor: default;
+                background-color: rgb(242, 242, 242);
+            }
+        }
+    }
+
+    .clear-btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #03a8f4c4;
+        color: #03a8f4c4;
+        outline: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background-color: #03a8f4c4;
+            color: white;
+        }
+    }
+}
+
+.section-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge {
+    margin-left: 5px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: #03a8f4c4;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+// mobile responsive
+@media (max-width: 599.98px) and (orientation: portrait) {
+    h2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        padding: 10px 20px;
+    }
+
+    .form-ctn {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left {
+        width: 100%;
+
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .salary-inputs-table {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            td, th {
+                text-align: left;
+                padding: 5px;
+            }
+        }
+
+        .input-ctn {
+            width: 100%;
+
+            label {
+                font-size: 0.7rem;
+            }
+
+            input {
+                font-size: 0.7rem;
+            }
+        }
+
+        .section {
+            gap: 5px;
+        }
+
+        .card {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-input-ctn {
+            flex-direction: row;
+            gap: 10px;
+
+            label {
+                font-size: 0.7rem;
+            }
+
+            input {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+    .right {
+        width: 100%;
+
+        .section {
+            gap: 5px;
+        }
+
+        .card {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-input-ctn {
+            flex-direction: row;
+            gap: 10px;
+
+            label {
+                font-size: 0.7rem;
+            }
+
+            input {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        .salary-results-ctn {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-ctn {
+            width: 100%;
+
+            label {
+                font-size: 0.7rem;
+            }
+
+            input {
+                font-size: 0.7rem;
+            }
+        }
+
+        .clear-btn {
+            font-size: 0.7rem;
+        }
+    }
+
+    .section-title {
+        font-size: 0.7rem;
+    }
+
+    .badge {
+        margin-left: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 0.7rem;
+    }
+}
